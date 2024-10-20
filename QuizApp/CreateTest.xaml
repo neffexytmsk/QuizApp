@@ -1,0 +1,38 @@
+﻿<Page x:Class="QuizApp.CreateTest"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuizApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateTest">
+
+    <Grid Background="White">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <StackPanel Margin="20">
+                <GroupBox Header="Название теста" Margin="0,0,0,10">
+                    <TextBox x:Name="TitleTextBox"/>
+                </GroupBox>
+                <GroupBox Header="Название вопроса">
+                    <TextBox x:Name="QuestionTextBox"  Margin="0,0,0,10"/>
+                </GroupBox>
+                <GroupBox Header="Вариант ответа 1">
+                    <TextBox x:Name="Answer1TextBox"  Margin="0,0,0,5"/>
+                </GroupBox>
+                <GroupBox Header="Вариант ответа 2">
+                    <TextBox x:Name="Answer2TextBox"  Margin="0,0,0,5"/>
+                </GroupBox>
+                <GroupBox Header="Вариант ответа 3">
+                    <TextBox x:Name="Answer3TextBox"  Margin="0,0,0,5"/>
+                </GroupBox>
+                <GroupBox Header="Правильный ответ">
+                    <TextBox x:Name="CorrectAnswerTextBox" Margin="0,0,0,10"/>
+                </GroupBox>
+                <Button Content="Добавить вопрос" Click="AddQuestionButton_Click" Width="200" Margin="0 0 0 10"/>
+                <Button Content="Сохранить тест" Click="SaveTestButton_Click" Width="200"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Frame x:Name="Frame" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Page>
