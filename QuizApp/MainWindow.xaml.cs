@@ -25,7 +25,7 @@ namespace QuizApp
         public MainWindow()
         {
             InitializeComponent();
-            Frame.Navigate(new GoTest());
+            Frame.Navigate(new CreateTest());
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿using QuizApp.Models;
+﻿using Newtonsoft.Json;
+using QuizApp.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,7 @@ namespace QuizApp
     /// </summary>
     public partial class GoTest : Page
     {
+        private string PATH = "tests.json";
         private List<Test> _tests;
         private int _currentTestIndex;
         private int _currentQuestionIndex;
@@ -33,9 +36,14 @@ namespace QuizApp
 
         private void LoadTests()
         {
-            _tests = TestLoader.LoadTests("tests.json");
+            _tests = LoadTests(PATH);
             TestSelector.ItemsSource = _tests;
             TestSelector.DisplayMemberPath = "Title";
+        }
+        public static List<Test> LoadTests(string PATH)
+        {
+            var json = File.ReadAllText(PATH);
+            return JsonConvert.DeserializeObject<List<Test>>(json);
         }
 
         private void TestSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)

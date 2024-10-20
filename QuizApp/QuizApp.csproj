@@ -64,7 +64,6 @@
     <Compile Include="GoTest.xaml.cs">
       <DependentUpon>GoTest.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\TestLoader.cs" />
     <Page Include="CreateTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
